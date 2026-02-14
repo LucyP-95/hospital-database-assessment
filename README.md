@@ -20,7 +20,7 @@ The pseudocode for the creation of this database is saved in the pseudocode file
 The data used to populate this database is saved in the data folder.
 
 ## sql
-The sql queries used to create, load and extract data are saved in the folder sql, under the names create.sql.
+The sql queries used to create, load and extract data are saved in the folder sql, under the names create.sql. The database is found in hospital_database.sql
 load.sql and query.sql respectively. The purpose of the queries is listed as a comment above the sql in 
 each file. 
 
@@ -28,4 +28,5 @@ each file.
 - Run create.sql to generate the database schema.
 - Run load.sql to populate the tables (update file paths as needed).
 - Run the queries in query.sql to extract data, following the comments above each query.
+
 
