@@ -1,0 +1,95 @@
+START
+
+CREATE database hospital_database
+
+	CREATE table Hospital 
+	
+	CREATE column hospital_id
+           DEFINE data type as positive integer
+	SET to +1 for new input in record 
+	
+	CREATE column name 
+	DEFINE data type as string, character upper limit 150
+	 
+	CREATE column address 
+	DEFINE data type as string, character upper limit 150
+	
+	CREATE column size 
+	DEFINE data type as positive integer
+	
+	CREATE column accreditation_status 
+	DEFINE data type as Boolean, default 0
+	
+	DEFINE PRIMARY KEY 'hospital_id' 
+	
+	CREATE TABLE doctors_and_patients
+	
+	CREATE column person_id
+	DEFINE data type as positive integer
+	SET to +1 for new input in record 
+	
+	CREATE column name
+	DEFINE data type as string, character upper limit 150
+	
+	CREATE column date_of_birth
+	DEFINE data type as DATE
+	
+	CREATE column address
+	DEFINE data type as string, character upper limit 150
+	
+	CREATE Column role
+	DEFINE data type as string (allowed 'doctor', 'patient')
+	
+	CREATE Column assigned_doctor_id
+	DEFINE data type as positive integer
+	SET as NULL value for records with role 'doctor'
+	
+	CREATE Column hospital_id
+	DEFINE data type as positive integer
+	SET as NULL value with records with role 'patient'
+	
+	DEFINE PRIMARY KEY as person_id
+	
+	DEFINE FOREIGN KEY as hospital_id 
+	REFERENCES table hospital column hospital_id 
+	
+	CREATE TABLE prescriptions
+	
+	CREATE column precription_id
+	DEFINE data type as positive integer
+	SET to +1 for new input in record 
+	
+	CREATE Column patient_id
+	DEFINE data type as positive integer
+	SET as NULL value for records with role 'doctor'
+	
+	CREATE Column doctor_id
+	DEFINE data type as positive integer
+	SET as NULL value with records with role 'patient'
+	
+	CREATE column medication
+	DEFINE data type as string, character upper limit 150
+	
+	CREATE column prescription_date
+	DEFINE data type as DATE
+	
+	DEFINE PRIMARY KEY as prescription_id
+	
+	DEFINE FOREIGN KEY as patient_id 
+	REFERENCES table hospital column person_id 
+	
+	DEFINE FOREIGN KEY as doctor_id 
+	REFERENCES table hospital column person_id 
+	
+	END
+
+START
+
+       LOAD data from hospital file into table hospital 
+
+       LOAD data from patients file into table  doctors_and_patients
+       LOAD data from doctors file into table doctors_and_patients
+
+       LOAD data from prescriptions file into table prescriptions 
+
+END
