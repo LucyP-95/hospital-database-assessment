@@ -1,7 +1,7 @@
 # Project aim: 
 To create a hospital database that incorporates data from 4 tables: doctors,
 patients, prescriptions and hospitals. (see data folder) The database should have the functionality to link 
-these entities to enable the sql queries listed below under sql.  
+these entities to enable the sql queries listed in the .sql files
 
 # Database
 The Database is compiled of 3 tables, linked by foreign keys. The doctors table and the patients table have been compiled into the table
@@ -28,3 +28,4 @@ each file.
 - Run create.sql to generate the database schema.
 - Run load.sql to populate the tables (update file paths as needed).
 - Run the queries in query.sql to extract data, following the comments above each query.
+
